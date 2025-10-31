@@ -1,7 +1,9 @@
-def retrieve_response(message_key, message_arguments):
+import logging
+
+def router(message_key, message_arguments):
     match message_key:
         case "ai":
-            response = ai_response(message_arguments)
+            response = ai_service(message_arguments)
         case "maps":
             response = maps_response()
         case "sms_external":  # text externally
@@ -18,6 +20,8 @@ def retrieve_response(message_key, message_arguments):
             response = verify_phone(message_arguments)
         case _:
             response = "No function key recognised"
+            logging.warning(f"Unrecognized function key: {message_key}")
+
             
     print(f"Successfully created response for: {message_key}")
     return response
