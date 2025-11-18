@@ -1,7 +1,7 @@
 import logging
 
-def router(message_key, message_arguments):
-    match message_key:
+def router(cmd: str, args: str):
+    match message_key:  
         case "ai":
             response = ai_service(message_arguments)
         case "maps":

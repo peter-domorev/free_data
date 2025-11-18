@@ -1,5 +1,6 @@
-def ai_response(message_arguments):
-    import ollama
+import ollama
+
+def ai_service(message_arguments):
 
     response = ollama.chat(
         model='gemma3n',

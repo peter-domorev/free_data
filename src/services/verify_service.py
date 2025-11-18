@@ -1,4 +1,4 @@
-def verify_phone(message_arguments):
+def verify_service(message_arguments):
     
     
     
