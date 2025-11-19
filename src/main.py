@@ -1,6 +1,5 @@
 from helpers.process_incoming import process_incoming
 from router import router
-from commands import ai
 from validators.sms_validator import sms_validator
 from helpers.error import error
 import logging
@@ -26,6 +25,8 @@ def main(raw_msg: str) -> str:
         response = router(cmd, args)
     except KeyError:
         response = error(f"\"{cmd}\" is not a valid command key")
+    except TypeError:
+        response = error(f"\"{args}\" is not a valid set of arguments")
     except NotImplementedError:
         response = error(f"{cmd} has not been implemented")
     except ValueError:

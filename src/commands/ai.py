@@ -10,11 +10,12 @@ class AI(ICommand):
     
     helpme_guide = NotImplementedError
     
-    def ai(prompt: str):
+    def response(prompt: str):
         
         raise NotImplementedError
         
         return
+    
     
 
 

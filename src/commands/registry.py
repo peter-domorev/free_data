@@ -8,4 +8,4 @@ def register(name: str):
         return obj
     return decorator
         
-    
+

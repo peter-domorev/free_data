@@ -1,19 +1,19 @@
 import logging
-from .ai import ai
-from .registry import registry
+from .registry import registry, register
 from .icommand import ICommand
 
+@register("helpme")
 class HelpMe(ICommand):
     
     helpme_syntax = "helpme [command]"
     
-    helpme_guide = "Not implemented"
+    helpme_guide = NotImplementedError
     
     
-    def helpme():
+    def response(args: str):
     
         commands_syntax = []
-        for obj in registry: commands_syntax.append(obj.helpme_syntax)
+        for obj in registry: commands_syntax.append(registry[obj].helpme_syntax)
         
         
         return str(commands_syntax) 
