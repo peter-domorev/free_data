@@ -1,19 +1,20 @@
-def helpme_service():
-    response = \
-    """ 
-    general syntax: function_key <arguments>
-    
-    Functions:
-    ai <prompt> 
-    maps <directions>
-    text (or sms_external?) <phone_number> <message> 
-    idea <content>
-    prank <phone_number>
-    helpme
-    nine11
-    verify
-    shutdown
-    """
+import logging
+from .ai import ai
+from .registry import registry
+from .icommand import ICommand
 
-    return response
+class HelpMe(ICommand):
+    
+    helpme_syntax = "helpme [command]"
+    
+    helpme_guide = "Not implemented"
+    
+    
+    def helpme():
+    
+        commands_syntax = []
+        for obj in registry: commands_syntax.append(obj.helpme_syntax)
+        
+        
+        return str(commands_syntax) 
 

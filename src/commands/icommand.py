@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class icommand(ABC):
+class ICommand(ABC):
     
     @property
     @abstractmethod

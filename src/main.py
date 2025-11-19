@@ -30,5 +30,6 @@ def main(raw_msg: str) -> str:
         response = error(f"{cmd} has not been implemented")
     except ValueError:
         response = error(f"Invalid characters used. Ensure characters are limited to:\n{sms_validator.allowed_characters}")
+        
     return response
 

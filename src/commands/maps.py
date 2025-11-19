@@ -1,3 +1,7 @@
-def maps_service():
-    response = "function still in development"
-    return response
+import logging
+from .icommand import ICommand
+
+class Maps(ICommand):
+    
+    def maps():
+        return

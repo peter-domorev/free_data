@@ -1,11 +1,20 @@
 import ollama
-from registry import command
+from .registry import register
+from .icommand import ICommand
 
-@command("ai")
-def ai(prompt: str):
+@register("ai")
+class AI(ICommand):
+    cmd = "ai"
     
-    raise NotImplementedError()
+    helpme_syntax = "ai <prompt>"
     
-    return temp
+    helpme_guide = NotImplementedError
+    
+    def ai(prompt: str):
+        
+        raise NotImplementedError
+        
+        return
+    
 
 

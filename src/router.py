@@ -1,11 +1,11 @@
 import logging
-from registry import registry
+from commands.registry import registry
 
 def router(cmd: str, args: str) -> str:
     func = registry.get(cmd)
     
     if func is None: raise KeyError
     
-    response = func(args)
+    response = func(args) # re structure how registry has classes, not functions
     
     return response
